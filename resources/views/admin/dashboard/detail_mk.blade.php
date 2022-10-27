@@ -24,7 +24,7 @@
                 <div>Data Lainnya</div>
                 <ul>
                     <li>Prodi : {{ $item->prodi }}</li>
-                    <li>Semester : {{ $item->semester }}</li>
+                    <li>Semester : {{ $item->semester  }}</li>
                 </ul>
             </div>
           </div>

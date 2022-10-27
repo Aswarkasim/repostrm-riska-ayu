@@ -15,7 +15,7 @@ class CreateBajarsTable extends Migration
     {
         Schema::create('bajars', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('dosen_id');
+            $table->foreignId('dosen_id')->nullable();
             $table->foreignId('matakuliah_id');
             $table->string('name');
             $table->text('desc')->nullable();

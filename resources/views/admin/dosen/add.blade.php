@@ -57,7 +57,7 @@
                   echo 'selected';
                 }
               } ?> >PTIK</option>
-              <option value="dosen"
+              <option value="TEKOM"
               <?php 
               if(isset($dosen)) {
                 if($dosen->prodi == 'TEKOM') {

@@ -56,7 +56,7 @@ class AdminBajarController extends Controller
         $data = $request->validate([
             'name'              => 'required',
             'matakuliah_id'              => 'required',
-            'dosen_id'              => 'required',
+            // 'dosen_id'              => 'required',
             'desc'              => 'required',
 
         ]);
