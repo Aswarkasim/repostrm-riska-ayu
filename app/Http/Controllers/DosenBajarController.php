@@ -19,7 +19,7 @@ class DosenBajarController extends Controller
         //
 
         $dosen_id = auth()->user()->id;
-        $bajar = Bajar::whereDosenId($dosen_id)->get();
+        $bajar = Bajar::get();
         $data = [
             'title'   => 'Manajemen Bahan Ajar',
             'bajar' => $bajar,
