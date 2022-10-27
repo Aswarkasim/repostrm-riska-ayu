@@ -4,15 +4,15 @@
         <div class="card p-4">
             <label for="">PTIK</label>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                <div class="progress-bar" role="progressbar" style="width: {{ $percent_ptik }}%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">{{ $percent_ptik }}%</div>
               </div>
               <br><br>
               <label for="">TEKOM</label>
             <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                <div class="progress-bar" role="progressbar" style="width: {{ $percent_tekom }}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{ $percent_tekom }}%</div>
               </div>
               <br>
-              <h6>Jumlah Ketuntasan : 10%</h6>
+              {{-- <h6>Jumlah Ketuntasan : 10%</h6> --}}
         </div>
     </div>
   </div>
