@@ -32,7 +32,9 @@
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                   @include('admin.dashboard.ptik_mk')                 
                 </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">TEKOM</div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                  @include('admin.dashboard.tekom_mk')                 
+                </div>
               </div>
         </div>
     </div>

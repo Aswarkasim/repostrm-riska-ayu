@@ -12,6 +12,7 @@ class AdminDashboardController extends Controller
     {
         $data = [
             'ptik_mk'         => Matakuliah::whereProdi('PTIK')->get(),
+            'tekom_mk'         => Matakuliah::whereProdi('TEKOM')->get(),
             'content' => 'admin/dashboard/index'
         ];
         return view('admin/layouts/wrapper', $data);
