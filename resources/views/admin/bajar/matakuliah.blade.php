@@ -61,7 +61,7 @@
           <td>
             <a href="/dosen/matakuliah/cpl?matakuliah_id={{ $row->id }}" class="btn btn-primary btn-sm">CPL</a>
             <a href="/admin/bajar/{{ $row->id }}" class="btn btn-primary btn-sm">Bahan ajar</a>
-            <a href="/admin/bajar/{{ $row->id }}" class="btn btn-primary btn-sm">Edit</a>
+            {{-- <a href="/admin/bajar/{{ $row->id }}" class="btn btn-primary btn-sm">Edit</a> --}}
           </td>
         </tr>
 
