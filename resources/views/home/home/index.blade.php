@@ -26,7 +26,7 @@
       <div class="col-md-4">
         <div class="outline-banner mt-2">
           <div class="text-center py-5">
-            <h1 class="text-white count" id="value">12</h1>
+            <h1 class="text-white count" id="value">{{ $mk_ptik }}</h1>
             <h3 class="">Matakuliah PTIK</h3>
           </div>
         </div>
@@ -35,7 +35,7 @@
       <div class="col-md-4">
         <div class="outline-banner mt-2">
           <div class="text-center py-5">
-            <h1 class="text-white count" id="value">12</h1>
+            <h1 class="text-white count" id="value">{{ $mk_tekom }}</h1>
             <h3 class="">Matakuliah TEKOM</h3>
           </div>
         </div>
@@ -44,7 +44,7 @@
       <div class="col-md-4">
         <div class="outline-banner mt-2">
           <div class="text-center py-5">
-            <h1 class="text-white count" id="value">12</h1>
+            <h1 class="text-white count" id="value">{{ $mk_ptik + $mk_tekom }}</h1>
             <h3 class="">Total Matakuliah</h3>
           </div>
         </div>
