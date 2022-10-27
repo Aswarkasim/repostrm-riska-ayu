@@ -55,7 +55,7 @@
         <tr>
           <td width="50px">{{$loop->iteration}}</td>
           <td>{{$row->matakuliah->kode}}</td>
-          <td>{{$row->matakuliah->name}}</td>
+          <td><a href="/admin/matakuliah/{{ $row->matakuliah_id }}">{{$row->matakuliah->name}}</a></td>
           {{-- <td>{{$row->dosen->name}}</td> --}}
           <td>{{$row->prodi}}</td>
           <td>
