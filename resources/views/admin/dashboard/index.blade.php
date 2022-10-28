@@ -1,4 +1,4 @@
-  <h6>selamat Datang {{ auth()->user()->name }}</h6>
+  <h6>Selamat Datang {{ auth()->user()->name }}</h6>
   <div class="row">
     <div class="col-md-12">
         <div class="card p-4">

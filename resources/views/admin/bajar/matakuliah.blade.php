@@ -3,7 +3,7 @@
 
   @if (auth()->user()->role == 'admin')
       
-  <a href="/admin/matakuliah/create" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Tambah</a>
+  {{-- <a href="/admin/matakuliah/create" class="btn btn-primary mb-3"><i class="fa fa-plus"></i> Tambah</a> --}}
   @endif
 
   <div class="float-right">

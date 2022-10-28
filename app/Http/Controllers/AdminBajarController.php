@@ -21,14 +21,14 @@ class AdminBajarController extends Controller
         $cari = request('cari');
 
         if ($cari) {
-            $matakuliah = Matakuliah::with('dosen')->where('nama', 'like', '%' . $cari . '%')->latest()->paginate(10);
+            $bajar = Bajar::where('name', 'like', '%' . $cari . '%')->latest()->paginate(10);
         } else {
-            $matakuliah = Matakuliah::with('dosen')->latest()->paginate(10);
+            $bajar = Bajar::latest()->paginate(10);
         }
         $data = [
-            'title'   => 'Manajemen Matakuliah',
-            'matakuliah' => $matakuliah,
-            'content' => 'admin/bajar/matakuliah'
+            'title'   => 'Manajemen Bahan Ajar',
+            'bajar' => $bajar,
+            'content' => 'admin/bajar/show'
         ];
         return view('admin/layouts/wrapper', $data);
     }

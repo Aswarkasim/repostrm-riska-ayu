@@ -29,7 +29,7 @@ class AdminMatakuliahController extends Controller
         if ($role == 'admin') {
 
             if ($cari) {
-                $matakuliah = Matakuliah::with('dosen')->where('nama', 'like', '%' . $cari . '%')->latest()->paginate(10);
+                $matakuliah = Matakuliah::with('dosen')->where('name', 'like', '%' . $cari . '%')->latest()->paginate(10);
             } else {
                 $matakuliah = Matakuliah::with('dosen')->latest()->paginate(10);
             }

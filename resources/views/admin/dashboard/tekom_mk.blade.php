@@ -26,13 +26,16 @@
                 </tr>
                 @foreach ($tekom_mk as $item)
                 @if ($item->semester == $i)
-                    
+                @php
+                    $bajar = \App\Models\Bajar::whereMatakuliahId($item->id)->count();
+                    $cpl = \App\Models\Cpl::whereMatakuliahId($item->id)->count();
+                    @endphp
                 <tr>
                     <td>{{ $item->kode }}</td>
                     <td>{{ $item->name }}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ $bajar >= 1 ? 'Ada' : 'Belum ada' }}</td>
+                    <td>{{ $cpl >= 1 ? 'Ada' : 'Belum ada' }}</td>
+                    <td>{{ $item->rps != null ? 'Ada' : 'Belum ada' }}</td>
                     <td>@include('admin.dashboard.detail_mk')</td>
                 </tr>
                 @endif
