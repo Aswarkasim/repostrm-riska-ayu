@@ -31,7 +31,7 @@
       <th>No</th>
       <th>Nama Bahan Ajar</th>
       <th>Matakuliah</th>
-      <th>Deskripsi</th>
+      <th>Prodi</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -43,7 +43,7 @@
       <td width="50px">{{$loop->iteration}}</td>
       <td>{{$row->name}}</td>
       <td>{{ $row->matakuliah->name }}</td>
-      <td>{{$row->desc}}</td>
+      <td>{{$row->matakuliah->prodi}}</td>
       <td>
 
         <div class="d-flex">
