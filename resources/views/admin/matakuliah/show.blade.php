@@ -40,6 +40,10 @@
 
                     </form>
 
+
+                    @if (auth()->user()->role == 'admin')
+                        
+
                     <form action="/admin/matakuliah/pengampuh/add" method="POST">  
                       @csrf
                                   <input type="hidden" name="matakuliah_id" value="{{ $matakuliah->id }}">
@@ -80,6 +84,10 @@
                       @endforeach
 
                     </table>
+
+                    @endif
+
+                    
                 </div>
 
                 <div class="col-md-6">

@@ -43,8 +43,8 @@
     <tr>
       <td width="50px">{{$loop->iteration}}</td>
       <td>{{$row->name}}</td>
-      <td>{{ $row->matakuliah->semester }}</td>
       <td>{{ $row->matakuliah->name }}</td>
+      <td>{{ $row->matakuliah->semester }}</td>
       <td>{{$row->matakuliah->prodi}}</td>
       <td>
 
