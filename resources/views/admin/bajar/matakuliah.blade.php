@@ -57,7 +57,7 @@
           <td>{{$row->matakuliah->kode}}</td>
           <td><a href="/admin/matakuliah/{{ $row->matakuliah_id }}">{{$row->matakuliah->name}}</a></td>
           {{-- <td>{{$row->dosen->name}}</td> --}}
-          <td>{{$row->prodi}}</td>
+          <td>{{$row->matakuliah->prodi}}</td>
           <td>
             <a href="/dosen/matakuliah/cpl?matakuliah_id={{ $row->id }}" class="btn btn-primary btn-sm">CPL</a>
             <a href="/admin/bajar/{{ $row->id }}" class="btn btn-primary btn-sm">Bahan ajar</a>
