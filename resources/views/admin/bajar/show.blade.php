@@ -31,6 +31,7 @@
       <th>No</th>
       <th>Nama Bahan Ajar</th>
       <th>Matakuliah</th>
+      <th>Semester</th>
       <th>Prodi</th>
       <th>Action</th>
     </tr>
@@ -42,6 +43,7 @@
     <tr>
       <td width="50px">{{$loop->iteration}}</td>
       <td>{{$row->name}}</td>
+      <td>{{ $row->matakuliah->semester }}</td>
       <td>{{ $row->matakuliah->name }}</td>
       <td>{{$row->matakuliah->prodi}}</td>
       <td>
