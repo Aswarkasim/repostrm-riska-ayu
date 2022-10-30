@@ -21,9 +21,9 @@ class AdminBajarController extends Controller
         $cari = request('cari');
 
         if ($cari) {
-            $bajar = Bajar::where('name', 'like', '%' . $cari . '%')->latest()->paginate(10);
+            $bajar = Bajar::with('matakuliah')->where('name', 'like', '%' . $cari . '%')->latest()->paginate(10);
         } else {
-            $bajar = Bajar::latest()->paginate(10);
+            $bajar = Bajar::with('matakuliah')->latest()->paginate(10);
         }
         $data = [
             'title'   => 'Manajemen Bahan Ajar',

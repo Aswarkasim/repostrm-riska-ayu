@@ -27,8 +27,8 @@
                 @foreach ($ptik_mk as $item)
                 @if ($item->semester == $i)
                     @php
-                        $bajar = \App\Models\Bajar::whereMatakuliahId($item->id)->count();
-                        $cpl = \App\Models\Cpl::whereMatakuliahId($item->id)->count();
+                        $bajar = \App\Models\Bajar::whereMatakuliahId($item->id)->get()->count();
+                        $cpl = \App\Models\Cpl::whereMatakuliahId($item->id)->get()->count();
                     @endphp
                 <tr>
                     <td>{{ $item->kode }}</td>

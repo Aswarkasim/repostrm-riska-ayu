@@ -10,4 +10,9 @@ class Bajar extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    function matakuliah()
+    {
+        return $this->belongsTo(Matakuliah::class);
+    }
 }
