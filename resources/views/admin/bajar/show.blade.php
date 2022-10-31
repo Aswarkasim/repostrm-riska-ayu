@@ -52,11 +52,15 @@
 
           <a href="/dosen/matakuliah/bajar/download?file={{ $row->file }}" class="btn btn-primary btn-sm mr-2"><i class="fas fa-download"></i> Unduh</a>
           
+          @if (auth()->user()->role == 'admin')
+              
           <form action="/dosen/bajar/{{$row->id}}" method="post">
             @method('delete')
             @csrf
             <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
           </form>
+          @endif
+
           
         </div>
       </td>
