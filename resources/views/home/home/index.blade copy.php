@@ -1,4 +1,3 @@
-
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     @foreach ($banner as $key => $item)
@@ -8,7 +7,7 @@
   <div class="carousel-inner">
 
     @foreach ($banner as $item)
-        
+
     <div class="carousel-item {{$item->urutan == '1' ? 'active' : ''}}">
       <img class="first-slide" src="{{$item->image}}" alt="First slide">
       <div class="container">
@@ -42,14 +41,15 @@
           <img src="/{{$item->image}}" class="img-post" alt="">
         </div>
         <div class="p-2">
-          <a href="/home/post/show/{{$item->slug}}"><h5><strong>{{$item->title}}</strong></h5></a>
+          <a href="/home/post/show/{{$item->slug}}">
+            <h5><strong>{{$item->title}}</strong></h5>
+          </a>
           <>{!!$item->excerpt!!} <a href="">Baca Selengkapnya &rightarrow;</a></p>
         </div>
       </div>
     </div>
     @endforeach
 
-    
+
   </div>
 </div>
-

@@ -59,8 +59,8 @@
           {{-- <td>{{$row->dosen->name}}</td> --}}
           <td>{{$row->matakuliah->prodi}}</td>
           <td>
-            <a href="/dosen/matakuliah/cpl?matakuliah_id={{ $row->id }}" class="btn btn-primary btn-sm">CPL</a>
-            <a href="/admin/bajar/{{ $row->id }}" class="btn btn-primary btn-sm">Bahan ajar</a>
+            <a href="/dosen/matakuliah/cpl?matakuliah_id={{ $row->matakuliah_id }}" class="btn btn-primary btn-sm">CPL</a>
+            <a href="/admin/bajar/{{ $row->matakuliah_id }}" class="btn btn-primary btn-sm">Bahan ajar</a>
             {{-- <a href="/admin/bajar/{{ $row->id }}" class="btn btn-primary btn-sm">Edit</a> --}}
           </td>
         </tr>
