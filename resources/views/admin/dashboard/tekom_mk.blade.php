@@ -33,9 +33,9 @@
                 <tr>
                     <td>{{ $item->kode }}</td>
                     <td>{{ $item->name }}</td>
-                    <td>{{ $bajar >= 1 ? 'Ada' : 'Belum ada' }}</td>
-                    <td>{{ $cpl >= 1 ? 'Ada' : 'Belum ada' }}</td>
-                    <td>{{ $item->rps != null ? 'Ada' : 'Belum ada' }}</td>
+                    <td>{!! $bajar >= 1 ? '<small class="p-2 bade bg-success"><i class="fas fa-check"></i> Ada</small>' : '<small class="p-2 bade bg-danger"><i class="fas fa-times"></i> Belum Ada</small>' !!}</td>
+                    <td>{!! $cpl >= 1 ? '<small class="p-2 bade bg-success"><i class="fas fa-check"></i> Ada</small>' : '<small class="p-2 bade bg-danger"><i class="fas fa-times"></i> Belum Ada</small>' !!}</td>
+                    <td>{!! $item->rps != null ? '<small class="p-2 bade bg-success"><i class="fas fa-check"></i> Ada</small>' : '<small class="p-2 bade bg-danger"><i class="fas fa-times"></i> Belum Ada</small>' !!}</td>
                     <td>@include('admin.dashboard.detail_mk')</td>
                 </tr>
                 @endif
