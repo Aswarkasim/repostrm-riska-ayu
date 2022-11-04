@@ -28,8 +28,8 @@
         
     <tr>
       <td width="50px">{{$loop->iteration}}</td>
-      <td>{{$row->cpl}}</td>
-      <td>{{$row->cpmk}}</td>
+      <td>{!!$row->cpl!!}</td>
+      <td>{!! $row->cpmk!!}</td>
       <td>
         <div class="btn-group">
             <button type="button" class="btn btn-primary"><i class="fa fa-cogs"></i></button>

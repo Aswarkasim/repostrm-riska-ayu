@@ -23,13 +23,36 @@ class AdminMatakuliahController extends Controller
     {
         //
         $cari = request('cari');
+        $semester = request('semester');
+        $prodi = request('prodi');
         $role = auth()->user()->role;
+
         $pmk = [];
 
         if ($role == 'admin') {
 
-            if ($cari) {
-                $matakuliah = Matakuliah::with('dosen')->where('name', 'like', '%' . $cari . '%')->latest()->paginate(10);
+
+
+            if ($cari || $semester || $prodi) {
+
+                if ($prodi && $semester) {
+                    $matakuliah = Matakuliah::with('dosen')->where('name', 'like', '%' . $cari . '%')->whereSemester($semester)->whereProdi($prodi)->latest()->paginate(10);
+                } else {
+                    $matakuliah = Matakuliah::with('dosen')->where('name', 'like', '%' . $cari . '%')->latest()->paginate(10);
+                }
+
+
+                if ($semester) {
+                    if ($prodi) {
+                        $matakuliah = Matakuliah::with('dosen')->where('name', 'like', '%' . $cari . '%')->whereSemester($semester)->whereProdi($prodi)->latest()->paginate(10);
+                    } else {
+                        $matakuliah = Matakuliah::with('dosen')->where('name', 'like', '%' . $cari . '%')->whereSemester($semester)->latest()->paginate(10);
+                    }
+                } else if ($prodi) {
+                    $matakuliah = Matakuliah::with('dosen')->where('name', 'like', '%' . $cari . '%')->whereProdi($prodi)->latest()->paginate(10);
+                } else {
+                    $matakuliah = Matakuliah::with('dosen')->where('name', 'like', '%' . $cari . '%')->latest()->paginate(10);
+                }
             } else {
                 $matakuliah = Matakuliah::with('dosen')->latest()->paginate(10);
             }

@@ -5,10 +5,25 @@
   <div class="float-right">
     <form action="" method="get">
     <div class="input-group input-group-sm">
-        <input type="text" name="cari" class="form-control" placeholder="Cari..">
+        <input type="text" name="cari" class="form-control" value="{{ request('cari') }}" placeholder="Cari..">
+
+        <select name="semester" class="form-control" id="">
+          <option value="">-- Semester --</option>
+          @for($i = 1; $i <= 8; $i++)
+              <option value="{{ $i }}" {{ $i == request('semester') ? 'selected' : '' }}>{{ $i }}</option>
+          @endfor
+        </select>
+
+
+          <select name="prodi" class="form-control" id="">
+            <option value="">-- PRODI --</option>
+            <option value="PTIK" {{ request('prodi') == 'PTIK' ? 'selected' : '' }}>PTIK</option>
+            <option value="TEKOM" {{ request('prodi') == 'TEKOM' ? 'selected' : '' }}>TEKOM</option>
+          </select>
+
         <span class="input-group-append">
           <button type="submit" class="btn btn-primary btn-flat"><i class="fa fa-search"></i></button>
-          <a href="/admin/matakuliah" class="btn btn-info btn-flat tombol-hapus"><i class="fa fa-sync-alt"></i></a>
+          <a href="/admin/matakuliah" class="btn btn-info btn-flat"><i class="fa fa-sync-alt"></i></a>
         </span>
       </div>
       </form>
@@ -20,7 +35,8 @@
       <th>Kode</th>
       <th>Nama Matakuliah</th>
       {{-- <th>Dosen Pengampuh</th> --}}
-      {{-- <th>Prodi</th> --}}
+      <th>Semester</th>
+      <th>Prodi</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -33,9 +49,11 @@
       <td>{{$row->kode}}</td>
       <td><a href="/admin/matakuliah/{{ $row->id }}"><b>{{$row->name}}</b></a></td>
       {{-- <td>{{$row->dosen->name}}</td> --}}
-      {{-- <td>{{$row->prodi}}</td> --}}
+      <td>{{$row->semester}}</td>
+      <td>{{$row->prodi}}</td>
       <td>
         <div class="btn-group">
+          <a href="/admin/bajar/{{ $row->id }}" class="btn btn-primary btn-sm mx-1">Bahan ajar</a>
             <button type="button" class="btn btn-primary"><i class="fa fa-cogs"></i></button>
             <button type="button" class="btn btn-primary dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="true">
               <span class="sr-only">Toggle Dropdown</span>

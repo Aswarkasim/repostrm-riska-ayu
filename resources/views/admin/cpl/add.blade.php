@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/plugins/summernote/summernote-bs4.min.css">
+
 <div class="row">
   <div class="col-md-6">
     <div class="p-3  card">
@@ -13,9 +15,10 @@
 
 
           <input type="hidden" value="{{ isset($cpl) ? $cpl->matakuliah_id : $matakuliah_id }}" name="matakuliah_id">
+
           <div class="form-group">
-            <label for="">Nama CPL</label>
-            <input type="text" class="form-control  @error('cpl') is-invalid @enderror"  name="cpl"  value="{{isset($cpl) ? $cpl->cpl : old('cpl')}}" placeholder="Nama CPL">
+            <label for="">CPL</label>
+            <textarea type="text" class="form-control  @error('cpl') is-invalid @enderror" id="summernote-cpl"  name="cpl"  value="">{{isset($cpl) ? $cpl->cpl : old('cpl')}}</textarea>
              @error('cpl')
                 <div class="invalid-feedback">
                   {{$message}}
@@ -23,9 +26,10 @@
              @enderror
           </div>
 
+
           <div class="form-group">
             <label for="">CPMK</label>
-            <textarea type="text" class="form-control  @error('cpmk') is-invalid @enderror"  name="cpmk"  value="">{{isset($cpl) ? $cpl->cpmk : old('cpmk')}}</textarea>
+            <textarea type="text" class="form-control  @error('cpmk') is-invalid @enderror" id="summernote-cpmk"  name="cpmk"  value="">{{isset($cpl) ? $cpl->cpmk : old('cpmk')}}</textarea>
              @error('cpmk')
                 <div class="invalid-feedback">
                   {{$message}}
@@ -43,4 +47,26 @@
     </div>
   </div>
 </div>
+
+
+<script src="/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+<script src="/plugins/summernote/summernote-bs4.min.js"></script>
+
+<script>
+  $(function () {
+    // Summernote
+    $('#summernote-cpl').summernote()
+    $('#summernote-cpmk').summernote()
+
+    // CodeMirror
+    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+      mode: "htmlmixed",
+      theme: "monokai"
+    });
+  })
+</script>
 
