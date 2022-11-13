@@ -78,7 +78,7 @@
                       </tr>
                       @foreach ($pmk as $p)                          
                       <tr>
-                        <td>{{ $p->dosen->name }}</td>
+                        <td>{{ isset($p->dosen) ? $p->dosen->name : '' }}</td>
                         <td><a href="/admin/matakuliah/pengampuh/delete/{{ $p->id }}"><i class="fas fa-times"></i></a></td>
                       </tr>
                       @endforeach

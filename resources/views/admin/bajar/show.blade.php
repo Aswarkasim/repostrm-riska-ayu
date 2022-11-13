@@ -79,9 +79,9 @@
   </tbody>
 </table>
 
-  {{-- <div class="float-right">
+  <div class="float-right mt-2">
     {{$bajar->links()}}
-  </div> --}}
+  </div>
 </div>
 </div>
 <!-- /.card-body -->

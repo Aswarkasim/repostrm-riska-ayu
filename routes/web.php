@@ -16,6 +16,7 @@ use App\Http\Controllers\AdminMatakuliahController;
 use App\Http\Controllers\DosenBajarController;
 use App\Http\Controllers\DosenCplController;
 use App\Http\Controllers\DosenMatakuliahController;
+use App\Models\Pengampuh;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,12 @@ Route::prefix('/admin/auth')->group(function () {
 
 
 Route::prefix('/admin')->middleware('auth')->group(function () {
+
+    Route::get('/test', function () {
+        $p  = Pengampuh::get()->groupBy('matakuliah_id');
+        dd($p);
+    });
+
     Route::get('/dashboard', [AdminDashboardController::class, 'index']);
 
     Route::resource('/bajar', AdminBajarController::class);
