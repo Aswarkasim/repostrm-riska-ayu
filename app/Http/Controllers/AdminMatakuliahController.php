@@ -261,7 +261,7 @@ class AdminMatakuliahController extends Controller
         $p = Pengampuh::find($id);
         $mk_id = $p->matakuliah_id;
         DB::table('pengampuhs')->delete($id);
-        Alert::success('success', 'Kateogri telah dihapus');
+        Alert::success('success', 'Pengampuh telah dihapus');
         return redirect('/admin/matakuliah/' . $mk_id);
     }
 }
