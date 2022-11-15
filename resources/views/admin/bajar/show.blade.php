@@ -79,9 +79,12 @@
   </tbody>
 </table>
 
-  <div class="float-right mt-2">
-    {{$bajar->links()}}
-  </div>
+@if (Request::is('admin/bajar'))
+    
+<div class="float-right mt-2">
+  {{$bajar->links()}}
+</div>
+@endif
 </div>
 </div>
 <!-- /.card-body -->
